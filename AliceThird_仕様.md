@@ -3,7 +3,7 @@
 AliceSecond（Ver 2.10a, 2000年）の26年ぶりの後継エンジン。
 スクリプト形式・拡張子（`.alc`）はAliceSecondと互換。
 
-> **オリジナル**: [AliceSecond Ver2.10a — Vector](https://www.vector.co.jp/soft/dl/win95/game/se093675.html)（製作：時津城 克己）
+> **オリジナル**: [AliceSecond Ver2.10a — Vector](https://www.vector.co.jp/soft/dl/win95/game/se093675.html)（製作：時津城 克己 氏）
 
 ---
 
