@@ -1,0 +1,87 @@
+<Window x:Class="AliceThird.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="AliceThird" Height="620" Width="660"
+        ResizeMode="CanMinimize"
+        Background="Black"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        MouseRightButtonDown="Window_MouseRightButtonDown"
+        KeyDown="Window_KeyDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="480"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- PIC ウィンドウ (640x480) -->
+        <Canvas x:Name="PicCanvas" Grid.Row="0"
+                Width="640" Height="480"
+                HorizontalAlignment="Left"
+                Background="Black"
+                ClipToBounds="True">
+            <!-- 背景画像 -->
+            <Image x:Name="PicImage"
+                   Width="640" Height="480"
+                   Stretch="Fill"
+                   Canvas.Left="0" Canvas.Top="0"/>
+            <!-- 動画 -->
+            <MediaElement x:Name="VideoPlayer"
+                          Width="640" Height="480"
+                          Stretch="Fill"
+                          Canvas.Left="0" Canvas.Top="0"
+                          LoadedBehavior="Manual"
+                          Visibility="Collapsed"/>
+            <!-- BGM 再生用（非表示・音声のみ） -->
+            <MediaElement x:Name="BgmPlayer"
+                          LoadedBehavior="Manual"
+                          Visibility="Collapsed"
+                          Canvas.Left="0" Canvas.Top="0"/>
+            <!-- フラッシュ用オーバーレイ -->
+            <Rectangle x:Name="FlashOverlay"
+                       Width="640" Height="480"
+                       Canvas.Left="0" Canvas.Top="0"
+                       Opacity="0"
+                       IsHitTestVisible="False"/>
+        </Canvas>
+
+        <!-- TXT + COM ウィンドウ -->
+        <Canvas Grid.Row="1" Background="#111">
+
+            <!-- TXT ウィンドウ -->
+            <Border x:Name="TxtBorder"
+                    Canvas.Left="2" Canvas.Top="2"
+                    Width="436" Height="136"
+                    Background="#DD000020"
+                    BorderBrush="#446688"
+                    BorderThickness="1">
+                <ScrollViewer x:Name="TxtScroller"
+                              VerticalScrollBarVisibility="Auto"
+                              Padding="6">
+                    <TextBlock x:Name="TxtBlock"
+                               Foreground="White"
+                               FontFamily="MS Gothic"
+                               FontSize="13"
+                               TextWrapping="Wrap"
+                               LineHeight="20"
+                               Margin="0,0,0,6"/>
+                </ScrollViewer>
+            </Border>
+
+            <!-- COM ウィンドウ -->
+            <Border x:Name="ComBorder"
+                    Canvas.Left="440" Canvas.Top="2"
+                    Width="196" Height="136"
+                    Background="#DD000020"
+                    BorderBrush="#446688"
+                    BorderThickness="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel x:Name="ComPanel"
+                                VerticalAlignment="Top"
+                                Margin="6"/>
+                </ScrollViewer>
+            </Border>
+
+        </Canvas>
+    </Grid>
+</Window>

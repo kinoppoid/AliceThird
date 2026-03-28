@@ -1,0 +1,15 @@
+## .NET build artifacts
+bin/
+obj/
+
+## Visual Studio / Rider
+*.user
+.vs/
+*.suo
+.idea/
+
+## デバッグログ
+alice_debug.log
+
+## サンプルフォルダ（別途管理）
+alice210a/
